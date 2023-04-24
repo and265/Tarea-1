@@ -20,7 +20,7 @@ class Expendedor{
         }
     }
 
-    public Bebida comprarBebida(Moneda mon, int sele){
+    public Bebida comprarBebida(Moneda mon, int sele) throws PagoInsuficienteException, PagoIncorrectoException, NoHayProductoException {
         Bebida ret = null;
         int vuelto = 0;
 
@@ -40,6 +40,7 @@ class Expendedor{
                 }
             }
         }
+
         if(ret != null){
             vuelto /= 100;
             for(int i = 0; i < vuelto; i++){
@@ -49,6 +50,15 @@ class Expendedor{
         }
         else{
             dVuelto.addMoneda(mon);
+        }
+        if(mon.getValor() < precio){
+            throw new PagoInsuficienteException("El pago no es suficiente.");
+        }
+        else if(mon == null){
+            throw new PagoIncorrectoException("No hay moneda para comprar.");
+        }
+        else if(ret == null){
+            throw new NoHayProductoException("No hay producto en el dispensador.");
         }
         return ret;
     }

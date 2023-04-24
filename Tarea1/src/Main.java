@@ -3,14 +3,15 @@ public class Main {
 
         Expendedor exp = new Expendedor(0, 500);
         Moneda m = null;
-        Comprador c = null;
-        m = new Moneda500();
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
+
+        m = new Moneda100();
 
         try {
 
-            c = new Comprador(m, 1, exp);
-            exp.comprarBebida(m, 1);
+            Comprador c = new Comprador(m, 1, exp);
+            //exp.comprarBebida(m, 1); no es necesario comprar bebiba manualmente,
+            //                         esta implemetado en la clase Comprador.
+
         } catch (PagoIncorrectoException e) {
 
             e.printStackTrace(System.out);
