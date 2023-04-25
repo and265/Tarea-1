@@ -1,14 +1,15 @@
 public class Main {
     public static void main(String[] args) {
 
-        Expendedor exp = new Expendedor(0, 500);
+        Expendedor exp = new Expendedor(2, 500);
         Moneda m = null;
 
-        m = new Moneda100();
+        m = new Moneda1000();
 
         try {
 
             Comprador c = new Comprador(m, 1, exp);
+            System.out.println(c.queBebiste());
             //exp.comprarBebida(m, 1); no es necesario comprar bebiba manualmente,
             //                         esta implemetado en la clase Comprador.
 

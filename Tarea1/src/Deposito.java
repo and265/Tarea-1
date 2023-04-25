@@ -1,23 +1,23 @@
 import java.util.ArrayList;
 
-class Deposito{
-    private ArrayList<Bebida> bebidas;
+class Deposito<T>{
+    private ArrayList<T> dep;
 
     public Deposito(){
-        bebidas = new ArrayList<Bebida>();
+        dep = new ArrayList<T>();
     }
 
-    public void addBebida(Bebida beb){
-        bebidas.add(beb);
+    public void addObj(T bar){
+        dep.add(bar);
     }
 
-    public Bebida getBebida(){
-        if (bebidas.size() == 0){
+    public T getObj(){
+        if (dep.size() == 0){
             return null;
         }
         else{
-            Bebida ret = bebidas.get(0);
-            bebidas.remove(0);
+            T ret = dep.get(0);
+            dep.remove(0);
             return ret;
         }
     }
