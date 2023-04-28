@@ -1,4 +1,4 @@
-abstract class Moneda{
+abstract class Moneda implements Comparable<Moneda>{
 
     protected int valor;
     protected int serie;
@@ -11,4 +11,7 @@ abstract class Moneda{
 
     public abstract int getValor();
 
+    public int compareTo(Moneda m) {
+        return (this.getValor() - m.getValor());
+    }
 }
