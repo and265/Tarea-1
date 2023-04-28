@@ -1,7 +1,7 @@
 /** 
  * Clase que simula a un comprador inresando dinero y seleccionando un producto en un expendedor.
- * @author Nombre Darwin Albornoz
- * @author Nombre Alex Blanchard
+ * @author Darwin Albornoz
+ * @author Alex Blanchard
  * @version versión 1, 28 de abril de 2023
  * @see PagoIncorrectoException
  */
