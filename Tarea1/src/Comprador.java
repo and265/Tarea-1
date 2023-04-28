@@ -2,14 +2,14 @@ class Comprador{
     private String sonido;
     private int vuelto;
 
-    public Comprador(Moneda m, int bebidaId, Expendedor ex) throws PagoIncorrectoException, PagoInsuficienteException, NoHayProductoException {
+    public Comprador(Moneda m, int productoId, Expendedor ex) throws PagoIncorrectoException, PagoInsuficienteException, NoHayProductoException {
         vuelto = 0;
         if( m ==  null){
             throw new PagoIncorrectoException("Se intento comprar sin moneda");
         }
-        Bebida beb = ex.comprarBebida(m, bebidaId);
-        if(beb != null) {
-            sonido = beb.beber();
+        Producto p = ex.comprarProducto(m, productoId);
+        if(p != null) {
+            sonido = p.consumir();
         }
         Moneda aux = ex.getVuelto();
         while (aux != null){
@@ -20,6 +20,6 @@ class Comprador{
 
     public int cuantoVuelto() {return vuelto;}
 
-    public String queBebiste() {return sonido;}
+    public String queConsumiste() {return sonido;}
 
 }
