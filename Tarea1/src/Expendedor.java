@@ -1,7 +1,7 @@
 /** 
  * Un expendedor que almacena productos(bebidas y dulces) para su posterior comercialización.
- * @author Nombre autor Darwin Albornoz
- * @author Nombre autor Alex Blanchard
+ * @author Darwin Albornoz
+ * @author Alex Blanchard
  * @version versión 1, 28 de abril de 2023
  * @see PagoInsuficienteException,PagoIncorrectoException,NoHayProductoException
  */
